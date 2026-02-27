@@ -1,0 +1,4 @@
+- need poster to be zoomed in first
+- need animation to bring poster to centre
+- need animation for icons, where theyre white until hoevered on
+- need everything to work and fit well on mobile
