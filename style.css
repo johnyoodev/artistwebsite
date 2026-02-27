@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(7, 24, 27, 0.5), rgba(7, 24, 27, 0.5)), 
+                url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: 65% center;
+    background-attachment: fixed;
+    background-size: 180%;
+    overflow: hidden; /* Prevents scrolling on mobile */
+    font-family: sans-serif;
+}
+
+.content-wrapper {
+    width: 90%;
+    max-width: 650px; /* Keeps it from getting too wide on desktop */
+    position: relative;
+}
+
+.poster-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poster {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.icon-overlay {
+    position: absolute;
+    bottom: 90%; /* Adjust this to move icons up or down on the poster */
+    display: flex;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.4); /* Subtle dark backing for icon legibility */
+    padding: 10px 20px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+}
+
+.icon-overlay img {
+    width: 35px; /* Size of your icons */
+    height: 35px;
+    transition: transform 0.2s;
+}
+
+.icon-overlay img:hover {
+    transform: scale(1.1);
+}
