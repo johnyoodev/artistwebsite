@@ -1,116 +1,50 @@
-* {
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.418), rgba(0, 0, 0, 0.418)), 
-                url('background.jpg') no-repeat;
-    background-position: 65% center;
-    background-attachment: fixed;
-    background-size: 180%;
-    overflow: hidden; /* Prevents scrolling on mobile */
+    min-height: 100vh;
+    background: 
+        linear-gradient(rgba(0,0,0,0.418), rgba(0,0,0,0.418)),
+        url('background1.jpeg');
+
+    background-size: cover;
     font-family: sans-serif;
-}
-
-.content-wrapper {
-    width: 100%;
-    max-width: 650px; /* Keeps it from getting too wide on desktop */
-    position: relative;
-}
-
-.poster-container {
-    position: relative;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: safe center;
+}
+
+.content-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 90%;
+    max-width: 600px;
 }
 
 .poster {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 600px;
 }
 
-.icon-overlay {
-    position: absolute;
-    bottom: 87%; /* Adjust this to move icons up or down on the poster */
-    left: 57%;
+.icon-container img {
+    width: 13vw;
+    max-width: 45px;
+    min-width: 25px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.icon-container {
     display: flex;
-    gap: 20px;
-    padding: 10px 20px;
-    border-radius: 50px;
-    color: white; 
-}
-
-.icon-overlay img {
-    width: 45px; /* Size of your icons */
-    height: 45px;
-    transition: transform 0.15s ease, filter 0.08s ease;
-}
-
-.icon-overlay img:hover {
-    filter: brightness(0) invert(1);
-    transform: scale(1.1);
-    
-}
-@media (max-width: 600px) {
-    body {
-        /* 1. FORCE the zoom. Increase this number (e.g., 300%) to zoom in more */
-        background-size: 700%; 
-        
-        /* 2. POSITION exactly. First % is Left/Right, second is Top/Bottom */
-        /* Move 80% to the right and 50% (center) vertically */
-        background-position: 50% 35%; 
-        
-        background-repeat: no-repeat;
-        
-        /* 3. Ensure the background color matches the image edges just in case */
-        background-color: #000; 
-        height: 100dvh;
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .content-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        overflow: visible; /* Crucial so icons aren't cut off */
-    }
-
-    .poster {
-    transform: scale(1.1); /* slightly zoomed in by default */
-    }
-
-    /* 2. Position the icons at the top of the screen */
-    .icon-overlay {
-        position: absolute;
-        /* Place them above the poster */
-        top: -95px; 
-        left: auto;
-        right: auto;
-        bottom: auto; /* Reset the 'bottom' property from desktop */
-        
-        /* Layout tweaks for mobile */
-        padding: 8px 20px;
-        gap: 40px;
-        
-    }
-
-    .icon-overlay img {
-    width: 50px; /* Size of your icons */
-    height: 50px;
-    transition: transform 0.15s ease, filter 0.08s ease;
-}
+    align-items: center;
+    justify-content: center;
+    gap: 30px
 
 }
